@@ -1,0 +1,6 @@
+version: '2'
+services:
+  licensingservice:
+      image: smia/tmx-licensing-service:chapter2
+      ports:
+        - "8080:8080"
