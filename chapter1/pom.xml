@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
 
     <name>thoughtmechanix-parent</name>
-    <description>Parent POM for Spring Microsercices in Action Chapter 1<description>
+    <description>Parent POM for Spring Microsercices in Action Chapter 1</description>
 
     <parent>
         <groupId>smia</groupId>
