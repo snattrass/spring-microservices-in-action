@@ -1,6 +1,6 @@
 version: '2'
 services:
-  simple-service:
+  simple-qqservice:
       image: smia/tmx-simple-service:chapter1
       ports:
         - "8080:8080"
