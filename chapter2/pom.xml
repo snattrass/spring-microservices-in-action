@@ -2,17 +2,16 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.thoughtmechanix</groupId>
-  <version>0.0.1-SNAPSHOT</version>
   <artifactId>chapter2</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>thoughtmechanix-parent-pom</name>
+  <name>smia-chapter2</name>
   <description>Parent POM for Spring Microsercices in Action Chapter 2</description>
 
   <parent>
     <groupId>smia</groupId>
-    <artifactId>smia</artifactId>
+    <artifactId>smia-root-pom</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
@@ -20,17 +19,4 @@
     <module>licensing-service</module>
   </modules>
     
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>com.spotify</groupId>
-        <artifactId>docker-maven-plugin</artifactId>
-        <version>0.4.10</version>
-        <configuration>
-        <baseImage>java</baseImage>
-        <imageName>example</imageName>
-      </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>

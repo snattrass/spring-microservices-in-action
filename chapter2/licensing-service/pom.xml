@@ -11,7 +11,7 @@
     <description>Licensing Service</description>
 
     <parent>
-        <groupId>com.thoughtmechanix</groupId>
+        <groupId>smia</groupId>
         <artifactId>chapter2</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
@@ -28,60 +28,41 @@
     </dependencies>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <start-class>com.thoughtmechanix.licenses.Application</start-class>
         <docker.image.name>smia/tmx-licensing-service</docker.image.name>
         <docker.image.tag>chapter2</docker.image.tag>
     </properties>
 
-    <build>
-        <plugins>
-            <!-- We use the Resources plugin to filer Dockerfile and run.sh, it inserts actual JAR filename -->
-            <!-- The final Dockerfile will be created in target/dockerfile/Dockerfile -->
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-resources</id>
-                        <!-- here the phase you need -->
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${basedir}/target/dockerfile</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/docker</directory>
-                                    <filtering>true</filtering>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>0.4.10</version>
-                <configuration>
-                    <imageName>${docker.image.name}:${docker.image.tag}</imageName>
-                    <dockerDirectory>${basedir}/target/dockerfile</dockerDirectory>
-                    <resources>
-                        <resource>
-                            <targetPath>/</targetPath>
-                            <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.jar</include>
-                        </resource>
-                    </resources>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+   <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>com.spotify</groupId>
+        <artifactId>dockerfile-maven-plugin</artifactId>
+        <version>${dockerfile-maven-version}</version>
+        <executions>
+          <execution>
+            <id>default</id>
+            <goals>
+              <goal>build</goal>
+              <goal>push</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>tag</id>
+            <goals>
+              <goal>tag</goal>
+            </goals>
+            <configuration>
+              <repository>${docker.image.name}</repository>
+              <tag>${docker.image.tag}</tag>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
