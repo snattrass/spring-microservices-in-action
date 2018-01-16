@@ -10,7 +10,7 @@
   <description>Simple Service</description>
 
   <parent>
-    <groupId>com.thoughtmechanix</groupId>
+    <groupId>smia</groupId>
     <artifactId>chapter1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>

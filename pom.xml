@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>smia</groupId>
+    <artifactId>smia-root-pom</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <artifactId>smia</artifactId>
     <packaging>pom</packaging>
 
     <name>spring-microservices-in-action</name>
