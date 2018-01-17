@@ -3,4 +3,4 @@ services:
   simple-service:
       image: smia/tmx-simple-service:chapter1
       ports:
-        - "8080:8080"
+        - "8080"
