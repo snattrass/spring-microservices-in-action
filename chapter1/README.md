@@ -9,9 +9,9 @@ Welcome to Spring Microservices in Action, Chapter 1.  Chapter 1 is an introduct
 # Building the Docker Images for Chapter 1
 To build the code examples for Chapter 1 as a docker image, open a command-line window change to the directory where you have downloaded the chapter 1 source code.
 
-Run the following maven command.  This command will execute the [Spotify docker plugin](https://github.com/spotify/docker-maven-plugin) defined in the pom.xml file.  
+Run the following maven command.  This command will execute the [Spotify dockerfile-maven plugin](https://github.com/spotify/dockerfile-maven) defined in the pom.xml file.  
 
-   **mvn clean package docker:build**
+   **mvn clean package**
 
 If everything builds successfully you should see a message indicating that the build was successful.
 
@@ -20,6 +20,12 @@ If everything builds successfully you should see a message indicating that the b
 Now we are going to use docker-compose to start the actual image.  To start the docker image,
 change to the docker-compose directory in your chapter 1 source code.  Issue the following docker-compose command:
 
-   **docker-compose -f docker/common/docker-compose.yml up**
+   **docker-compose up**
 
 If everything starts correctly you should see a bunch of spring boot information fly by on standard out.  At this point all of the services needed for the chapter code examples will be running.
+
+To determine the port on the host which Docker has mapped the container port (8080) to use:
+
+  **docker ps**
+  
+This will show the port mapping, for example: 0.0.0.0:32769->8080/tcp indicating that port 32768 on the host is mapped to 8080n (Tomcat) on the container.

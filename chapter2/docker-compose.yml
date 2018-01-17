@@ -3,4 +3,4 @@ services:
   licensing-service:
       image: smia/tmx-licensing-service:chapter2
       ports:
-        - "32768:8080"
+        - "8080"
