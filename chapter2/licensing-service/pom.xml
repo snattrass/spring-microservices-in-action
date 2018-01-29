@@ -29,7 +29,7 @@
 
     <properties>
         <start-class>com.thoughtmechanix.licenses.Application</start-class>
-        <docker.image.name>smia/tmx-licensing-service</docker.image.name>
+        <docker.image.name>${docker.image.name.prefix}/tmx-licensing-service</docker.image.name>
         <docker.image.tag>chapter2</docker.image.tag>
     </properties>
 

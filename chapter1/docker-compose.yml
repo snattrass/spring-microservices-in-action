@@ -1,6 +1,6 @@
 version: '2'
 services:
   simple-service:
-      image: smia/tmx-simple-service:chapter1
+      image: smia/$SMIA_USER/tmx-simple-service:chapter1
       ports:
         - "8080"

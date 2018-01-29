@@ -24,7 +24,7 @@
 
   <properties>
     <start-class>com.thoughtmechanix.simpleservice.Application</start-class>
-    <docker.image.name>smia/tmx-simple-service</docker.image.name>
+    <docker.image.name>${docker.image.name.prefix}/tmx-simple-service</docker.image.name>
     <docker.image.tag>chapter1</docker.image.tag>
   </properties>
 
