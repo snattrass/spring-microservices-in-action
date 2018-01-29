@@ -2,9 +2,14 @@
 Welcome to Spring Microservices in Action, Chapter 1.  Chapter 1 is an introduction to the book.  The only code used in this Chapter is a simple, "helloworld" style service that demonstrates how to build a simple microservice using Spring Boot.
 
 # Software needed
-1.	Apache Maven (http://apache.maven.org). I used version 3.3.9 of the Maven. I chose Maven because, while other build tools like Gradle are extremely popular, Maven is still the pre-dominate build tool in use in the Java ecosystem. All of the code examples in this book have been compiled with Java version 1.8.
+1.	Apache Maven (http://maven.apache.org). I used version 3.3.9 of the Maven. I chose Maven because, while other build tools like Gradle are extremely popular, Maven is still the pre-dominate build tool in use in the Java ecosystem. All of the code examples in this book have been compiled with Java version 1.8.
 2.	Docker (http://docker.com). I built the code examples in this book using Docker V1.12 and above. I am taking advantage of the embedded DNS server in Docker that came out in release V1.11. New Docker releases are constantly coming out so it's release version you are using may change on a regular basis.
 3.	Git Client (http://git-scm.com). All of the source code for this book is stored in a GitHub repository. For the book, I used version 2.8.4 of the git client.
+
+# Environment
+
+These samples expect a SMIA_USER environment variable to be set to something unique for the user (username perhaps).  The value of this variable will be included in the
+repository name for the image to uniquely identify it.  This is useful when multiple people attempt to build a Docker image for the same sample.
 
 # Building the Docker Images for Chapter 1
 To build the code examples for Chapter 1 as a docker image, open a command-line window change to the directory where you have downloaded the chapter 1 source code.
