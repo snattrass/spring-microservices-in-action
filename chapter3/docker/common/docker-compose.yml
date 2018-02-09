@@ -1,25 +1,25 @@
-version: '2'
+version: '2.1'
 services:
   config-service:
-    image: smia/tmx-config-service:chapter3
+    image: smia/$SMIA_USER/tmx-config-service:chapter3
     ports:
-       - "8888:8888"
+       - "32800:8888"
     environment:
       ENCRYPT_KEY:       "IMSYMMETRIC"
 
   database:
     image: postgres:9.5
     ports:
-      - "5432:5432"
+      - "32900:5432"
     environment:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "p0stgr@s"
       POSTGRES_DB:       "eagle_eye_local"
 
   licensing-service:
-    image: smia/tmx-licensing-service:chapter3
+    image: smia/$SMIA_USER/tmx-licensing-service:chapter3
     ports:
-      - "8080:8080"
+      - "32801:8080"
     environment:
       PROFILE: "default"
       CONFIG_SERVICE_URI: "http://config-service:8888"
