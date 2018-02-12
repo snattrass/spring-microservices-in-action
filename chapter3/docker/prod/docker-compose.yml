@@ -15,11 +15,12 @@ services:
       service: config-service
 
   licensing-service:
-    image: smia/licensing-service:chapter3
+    image: smia/$SMIA_USER/tmx-licensing-service:chapter3
     ports:
-      - "8080:8080"
+      - "8080"
     environment:
       PROFILE: "prod"
       CONFIG_SERVICE_URI: "http://config-service:8888"
       CONFIG_SERVICE_PORT:   "8888"
       DATABASE_PORT: "5432"
+      ENCRYPT_KEY: "IMSYMMETRIC"
