@@ -1,12 +1,12 @@
 version: '2'
 services:
   eurekaserver:
-     image:   smia/tmx-eureka-service:chapter4
+     image:   smia/$SMIA_USER/tmx-eureka-service:chapter4
      ports:
        - "8761:8761"
 
   configserver:
-      image: smia/tmx-config-service:chapter4
+      image: smia/$SMIA_USER/tmx-config-service:chapter4
       ports:
          - "8888:8888"
       environment:
@@ -34,7 +34,7 @@ services:
         - POSTGRES_DB=eagle_eye_local
 
   licensingservice:
-      image: smia/tmx-licensing-service:chapter4
+      image: smia/$SMIA_USER/tmx-licensing-service:chapter4
       ports:
         - "8080:8080"
       environment:
@@ -48,7 +48,7 @@ services:
         ENCRYPT_KEY:       "IMSYMMETRIC"
 
   organizationservice:
-      image: smia/tmx-organization-service:chapter4
+      image: smia/$SMIA_USER/tmx-organization-service:chapter4
       ports:
         - "8085:8085"
       environment:
@@ -61,7 +61,7 @@ services:
         DATABASESERVER_PORT: "5432"
         ENCRYPT_KEY:       "IMSYMMETRIC"
   organizationservice2:
-      image: smia/tmx-organization-service:chapter4
+      image: smia/$SMIA_USER/tmx-organization-service:chapter4
       ports:
         - "8086:8086"
       environment:
