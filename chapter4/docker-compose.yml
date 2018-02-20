@@ -6,7 +6,7 @@ services:
        - "8761:8761"
 
   configserver:
-      image: smia/tmx-confsvr:chapter4
+      image: smia/tmx-config-service:chapter4
       ports:
          - "8888:8888"
       environment:
@@ -66,7 +66,7 @@ services:
         - "8086:8086"
       environment:
         PROFILE: "default"
-        SERVER_PORT: "8085"
+        SERVER_PORT: "8086"
         CONFIGSERVER_URI: "http://configserver:8888"
         EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
         EUREKASERVER_PORT:   "8761"
