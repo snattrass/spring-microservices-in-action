@@ -46,7 +46,7 @@
 
   <properties>
     <start-class>com.thoughtmechanix.confsvr.ConfigServerApplication</start-class>
-    <docker.image.name>smia/tmx-config-service</docker.image.name>
+    <docker.image.name>${docker.image.name.prefix}/tmx-config-service</docker.image.name>
     <docker.image.tag>chapter4</docker.image.tag>
   </properties>
 
@@ -79,6 +79,14 @@
             </configuration>
           </execution>
         </executions>
+        <configuration>
+          <buildArgs>
+            <HTTP_PROXY>${env.HTTP_PROXY}</HTTP_PROXY>
+            <http_proxy>${env.HTTP_PROXY}</http_proxy>
+            <HTTPS_PROXY>${env.HTTPS_PROXY}</HTTPS_PROXY>
+            <https_proxy>${env.HTTPS_PROXY}</https_proxy>
+          </buildArgs>
+        </configuration>
       </plugin>
     </plugins>
   </build>
