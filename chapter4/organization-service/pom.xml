@@ -73,7 +73,7 @@
 
   <properties>
     <start-class>com.thoughtmechanix.organization.Application</start-class>
-    <docker.image.name>{docker.image.name.prefix}/tmx-organization-service</docker.image.name>
+    <docker.image.name>${docker.image.name.prefix}/tmx-organization-service</docker.image.name>
     <docker.image.tag>chapter4</docker.image.tag>
   </properties>
 
