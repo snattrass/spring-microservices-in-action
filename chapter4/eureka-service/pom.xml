@@ -36,7 +36,7 @@
 
   <properties>
     <start-class>com.thoughtmechanix.eurekasvr.EurekaServerApplication</start-class>
-    <docker.image.name>smia/tmx-eurekasvr</docker.image.name>
+    <docker.image.name>smia/tmx-eureka-service</docker.image.name>
     <docker.image.tag>chapter4</docker.image.tag>
   </properties>
 

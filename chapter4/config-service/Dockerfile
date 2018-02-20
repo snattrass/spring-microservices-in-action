@@ -6,7 +6,7 @@ RUN cd /tmp/ && \
     unzip jce_policy-8.zip && \
     rm jce_policy-8.zip && \
     yes |cp -v /tmp/UnlimitedJCEPolicyJDK8/*.jar /usr/lib/jvm/java-1.8-openjdk/jre/lib/security/
-ADD target/configurationserver-0.0.1-SNAPSHOT.jar /usr/local/configserver/
+ADD target/config-service-0.0.1-SNAPSHOT.jar /usr/local/configserver/
 ADD src/main/docker/run.sh run.sh
 RUN chmod +x run.sh
 CMD ./run.sh

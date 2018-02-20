@@ -1,7 +1,7 @@
 version: '2'
 services:
   eurekaserver:
-     image:   smia/tmx-eurekasvr:chapter4
+     image:   smia/tmx-eureka-service:chapter4
      ports:
        - "8761:8761"
 
