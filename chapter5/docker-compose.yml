@@ -1,13 +1,14 @@
 version: '2'
 services:
   eurekaserver:
-     image:   smia/tmx-eureka-service:chapter5
+     image:   smia/$SMIA_USER/tmx-eureka-service:chapter5
      ports:
-         - "8761:8761"
+       - "8761"
+
   configserver:
-      image: smia/tmx-config-service:chapter5
+      image: smia/$SMIA_USER/tmx-config-service:chapter5
       ports:
-         - "8888:8888"
+         - "8888"
       environment:
          EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
          EUREKASERVER_PORT: "8761"
@@ -15,16 +16,16 @@ services:
   database:
       image: postgres:9.5
       ports:
-        - "5432:5432"
+      - "5432"
       environment:
         - POSTGRES_USER=postgres
         - POSTGRES_PASSWORD=p0stgr@s
         - POSTGRES_DB=eagle_eye_local
   licensingservice:
-      image: smia/tmx-licensing-service:chapter5
+      image: smia/$SMIA_USER/tmx-licensing-service:chapter5
       ports:
-        - "8080:8080"
-        - "8090:8090"
+        - "8080"
+        - "8090"
       environment:
         PROFILE: "default"
         SERVER_PORT: "8080"
@@ -35,7 +36,7 @@ services:
         EUREKASERVER_PORT:   "8761"
         ENCRYPT_KEY:       "IMSYMMETRIC"
   organizationservice:
-      image: smia/tmx-organization-service:chapter5
+      image: smia/$SMIA_USER/tmx-organization-service:chapter5
       ports:
         - "8085:8085"
       environment:
