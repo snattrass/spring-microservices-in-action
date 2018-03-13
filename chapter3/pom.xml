@@ -17,7 +17,7 @@
 
   <modules>
     <module>config-service</module>
-    <module>licensing-service3</module>
+    <module>licensing-service</module>
   </modules>
     
 </project>
