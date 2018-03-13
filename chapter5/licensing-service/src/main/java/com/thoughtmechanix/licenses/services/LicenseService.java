@@ -59,6 +59,7 @@ public class LicenseService {
 
     private void sleep(){
         try {
+            System.out.println("...Zzzzzzzzzzz...");
             Thread.sleep(11000);
         } catch (InterruptedException e) {
             e.printStackTrace();
