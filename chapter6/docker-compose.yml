@@ -1,17 +1,19 @@
 version: '2'
 services:
   eurekaserver:
-   image:   smia/tmx-eureka-service:chapter6
+   image:   smia/$SMIA_USER/tmx-eureka-service:chapter6
    ports:
        - "8761:8761"
+
   configserver:
-    image: smia/tmx-config-service:chapter6
+    image: smia/$SMIA_USER/ttmx-config-service:chapter6
     ports:
        - "8888:8888"
     environment:
        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
        EUREKASERVER_PORT: 8761
        ENCRYPT_KEY:       "IMSYMMETRIC"
+
   zuulserver:
     image: smia/tmx-zuul-service:chapter6
     ports:
@@ -25,6 +27,7 @@ services:
       DATABASESERVER_PORT:      "5432"
       CONFIGSERVER_PORT:        "8888"
       ORGSERVERNEW_PORT:        "8087"
+
   database:
     image: postgres:9.5
     ports:
@@ -33,8 +36,9 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=p0stgr@s
       - POSTGRES_DB=eagle_eye_local
+
   licensingservice:
-    image: smia/tmx-licensing-service:chapter6
+    image: smia/$SMIA_USER/ttmx-licensing-service:chapter6
     ports:
       - "8080:8080"
     environment:
@@ -48,8 +52,9 @@ services:
       ORGSERVERNEW_PORT:        "8087"
       ZUULSERVER_PORT:          "5555"
       ENCRYPT_KEY:       "IMSYMMETRIC"
+
   organizationservice:
-    image: smia/tmx-organization-service:chapter6
+    image: smia/$SMIA_USER/ttmx-organization-service:chapter6
     ports:
       - "8085:8085"
     environment:
@@ -62,7 +67,7 @@ services:
       CONFIGSERVER_PORT:        "8888"
       ENCRYPT_KEY:       "IMSYMMETRIC"
   orgservice-new:
-    image: smia/tmx-orgservice-new:chapter6
+    image: smia/$SMIA_USER/ttmx-orgservice-new:chapter6
     ports:
       - "8087:8087"
     environment:
@@ -74,8 +79,9 @@ services:
       DATABASESERVER_PORT:      "5432"
       CONFIGSERVER_PORT:        "8888"
       ENCRYPT_KEY:       "IMSYMMETRIC"
+
   specialroutes-service:
-    image: smia/tmx-specialroutes-service:chapter6
+    image: smia/$SMIA_USER/ttmx-specialroutes-service:chapter6
     ports:
       - "8910:8910"
     environment:
