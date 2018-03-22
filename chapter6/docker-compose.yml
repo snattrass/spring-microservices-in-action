@@ -6,7 +6,7 @@ services:
        - "8761:8761"
 
   configserver:
-    image: smia/$SMIA_USER/ttmx-config-service:chapter6
+    image: smia/$SMIA_USER/tmx-config-service:chapter6
     ports:
        - "8888:8888"
     environment:
@@ -15,7 +15,7 @@ services:
        ENCRYPT_KEY:       "IMSYMMETRIC"
 
   zuulserver:
-    image: smia/tmx-zuul-service:chapter6
+    image: smia/$SMIA_USER/tmx-zuul-service:chapter6
     ports:
       - "5555:5555"
     environment:
@@ -38,9 +38,9 @@ services:
       - POSTGRES_DB=eagle_eye_local
 
   licensingservice:
-    image: smia/$SMIA_USER/ttmx-licensing-service:chapter6
+    image: smia/$SMIA_USER/tmx-licensing-service:chapter6
     ports:
-      - "8080:8080"
+      - "8080"
     environment:
       PROFILE: "default"
       SERVER_PORT: "8080"
@@ -54,7 +54,7 @@ services:
       ENCRYPT_KEY:       "IMSYMMETRIC"
 
   organizationservice:
-    image: smia/$SMIA_USER/ttmx-organization-service:chapter6
+    image: smia/$SMIA_USER/tmx-organization-service:chapter6
     ports:
       - "8085:8085"
     environment:
@@ -67,7 +67,7 @@ services:
       CONFIGSERVER_PORT:        "8888"
       ENCRYPT_KEY:       "IMSYMMETRIC"
   orgservice-new:
-    image: smia/$SMIA_USER/ttmx-orgservice-new:chapter6
+    image: smia/$SMIA_USER/tmx-orgservice-new:chapter6
     ports:
       - "8087:8087"
     environment:
@@ -81,7 +81,7 @@ services:
       ENCRYPT_KEY:       "IMSYMMETRIC"
 
   specialroutes-service:
-    image: smia/$SMIA_USER/ttmx-specialroutes-service:chapter6
+    image: smia/$SMIA_USER/tmx-specialroutes-service:chapter6
     ports:
       - "8910:8910"
     environment:
