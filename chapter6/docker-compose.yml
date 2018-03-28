@@ -17,7 +17,7 @@ services:
   zuulserver:
     image: smia/$SMIA_USER/tmx-zuul-service:chapter6
     ports:
-      - "5555:5555"
+      - "5555"
     environment:
       PROFILE: "default"
       SERVER_PORT: "5555"
