@@ -1,11 +1,11 @@
 version: '2'
 services:
   eurekaserver:
-     image:   johncarnell/tmx-eurekasvr:chapter7
+     image:   smia/tmx-eureka-service:chapter7
      ports:
          - "8761:8761"
   configserver:
-      image: johncarnell/tmx-confsvr:chapter7
+      image: smia/tmx-config-service:chapter7
       ports:
          - "8888:8888"
       environment:
@@ -13,7 +13,7 @@ services:
          EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
          ENCRYPT_KEY:       "IMSYMMETRIC"
   zuulserver:
-      image: johncarnell/tmx-zuulsvr:chapter7
+      image: smia/tmx-zuul-service:chapter7
       ports:
         - "5555:5555"
       environment:
@@ -32,7 +32,7 @@ services:
         - POSTGRES_PASSWORD=p0stgr@s
         - POSTGRES_DB=eagle_eye_local
   licensingservice:
-      image: johncarnell/tmx-licensing-service:chapter7
+      image: smia/tmx-licensing-service:chapter7
       ports:
         - "8082:8082"
       environment:
@@ -48,7 +48,7 @@ services:
         AUTHSERVER_URI:   "http://authenticationservice:8901/auth/user"
         ENCRYPT_KEY:       "IMSYMMETRIC"
   organizationservice:
-      image: johncarnell/tmx-organization-service:chapter7
+      image: smia/tmx-organization-service:chapter7
       ports:
         - "8085:8085"
       environment:
@@ -63,7 +63,7 @@ services:
         AUTHSERVER_URI:   "http://authenticationservice:8901/auth/user"
         ENCRYPT_KEY:       "IMSYMMETRIC"
   authenticationservice:
-      image: johncarnell/tmx-authentication-service:chapter7
+      image: smia/tmx-authentication-service:chapter7
       ports:
         - "8901:8901"
       environment:
