@@ -1,11 +1,11 @@
 version: '2'
 services:
   eurekaserver:
-     image:   smia/tmx-eureka-service:chapter7
+     image:   smia/$SMIA_USER/tmx-eureka-service:chapter7
      ports:
          - "8761:8761"
   configserver:
-      image: smia/tmx-config-service:chapter7
+      image: smia/$SMIA_USER/tmx-config-service:chapter7
       ports:
          - "8888:8888"
       environment:
@@ -13,7 +13,7 @@ services:
          EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
          ENCRYPT_KEY:       "IMSYMMETRIC"
   zuulserver:
-      image: smia/tmx-zuul-service:chapter7
+      image: smia/$SMIA_USER/tmx-zuul-service:chapter7
       ports:
         - "5555:5555"
       environment:
@@ -32,9 +32,9 @@ services:
         - POSTGRES_PASSWORD=p0stgr@s
         - POSTGRES_DB=eagle_eye_local
   licensingservice:
-      image: smia/tmx-licensing-service:chapter7
+      image: smia/$SMIA_USER/tmx-licensing-service:chapter7
       ports:
-        - "8082:8082"
+        - "8082"
       environment:
         PROFILE: "default"
         SERVER_PORT: "8082"
@@ -48,7 +48,7 @@ services:
         AUTHSERVER_URI:   "http://authenticationservice:8901/auth/user"
         ENCRYPT_KEY:       "IMSYMMETRIC"
   organizationservice:
-      image: smia/tmx-organization-service:chapter7
+      image: smia/$SMIA_USER/tmx-organization-service:chapter7
       ports:
         - "8085:8085"
       environment:
@@ -63,9 +63,9 @@ services:
         AUTHSERVER_URI:   "http://authenticationservice:8901/auth/user"
         ENCRYPT_KEY:       "IMSYMMETRIC"
   authenticationservice:
-      image: smia/tmx-authentication-service:chapter7
+      image: smia/$SMIA_USER/tmx-authentication-service:chapter7
       ports:
-        - "8901:8901"
+        - "8901"
       environment:
         PROFILE: "default"
         SERVER_PORT: "8901"
