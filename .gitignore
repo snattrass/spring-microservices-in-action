@@ -1,9 +1,6 @@
 # Build
 target/
 out/
-*.class
-*.jar
-*.war
 
 #jEnv
 .java-version
