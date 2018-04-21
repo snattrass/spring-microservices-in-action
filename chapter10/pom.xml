@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>chapter10</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>smia-chapter10</name>
+  <description>Parent POM for Spring Microsercices in Action Chapter 10</description>
+
+  <parent>
+    <groupId>smia</groupId>
+    <artifactId>smia-root-pom</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <modules>
+    <module>authentication-service</module>
+    <module>config-service</module>
+    <module>eureka-service</module>
+    <module>licensing-service</module>
+    <module>organization-service</module>
+    <module>zuul-service</module>
+  </modules>
+
+</project>
